@@ -1,5 +1,7 @@
+import Header from '@/components/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Breadcrumbs from '@/components/breadcrumbs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="flex justify-center fixed w-full z-[1000] bg-base-100">
+          <Header />
+        </header>
+        <main className="min-h-screen flex-col pt-20 px-4 bg-base-100">
+          <Breadcrumbs />
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
+

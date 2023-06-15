@@ -1,18 +1,16 @@
-import dbConnect from "@/lib/mongoose/dbConnect";
-import { Income, IncomeModel } from "../models/income"
+import { IncomeService } from "@/lib/services";
+
 import IncomesList from "./incomes-list";
 
-async function getIncomes(): Promise<Income[]>  {
-  await dbConnect();
-  const incomes = await IncomeModel.find();
- 
-  return incomes;
-}
-
 export default async function Page() {
-  const incomes = await getIncomes();
+  const incomes = await new IncomeService().getIncomes();
 
   return (
-    <IncomesList incomes={incomes} />
+    <div className="flex gap-4">
+      <IncomesList incomes={incomes} />
+    </div>
   )
 }
+
+export const revalidate = 0;
+

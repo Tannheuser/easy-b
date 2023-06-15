@@ -6,8 +6,9 @@ function IncomesList(props: IncomesListProps) {
 
   return (
     incomes.map((income) => (
-      <IncomeStat key={income.id} income={income} /> 
+      <IncomeStat key={income.id} income={income} />
     ))
+
   )
 }
 

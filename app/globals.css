@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+header {
+  box-shadow: inset 0 -1px 0 0 #555;
+
+}
+
+.navbar {
+  max-width: 1400px;
+}
+
+main-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: calc(var(--layoutWidth) + 2*var(--padding-x-gap));
+  padding: 0 var(--padding-x-gap);
+}
