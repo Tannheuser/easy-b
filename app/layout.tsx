@@ -2,6 +2,8 @@ import Header from '@/components/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Breadcrumbs from '@/components/breadcrumbs'
+import Link from 'next/link'
+import { bars, queueList, squaresPlus, wallet } from '@/lib/const/icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,10 +23,39 @@ export default function RootLayout({
         <header className="flex justify-center fixed w-full z-[1000] bg-base-100">
           <Header />
         </header>
-        <main className="min-h-screen flex-col pt-20 px-4 bg-base-100">
+        <main className="min-h-[calc(100vh-4rem)] flex-col pt-20 px-4 bg-base-100">
           <Breadcrumbs />
           {children}
         </main>
+        <footer className="footer footer-center">
+          <div className="flex justify-center gap-8 py-2 text-xs text-neutral-content">
+            <Link href="/incomes">
+              <div className="flex flex-col items-center">
+                {bars}
+                <div className="mt-1">Overview</div>
+              </div>
+             
+            </Link>
+            <Link href="/incomes">
+              <div className="flex flex-col items-center">
+                {squaresPlus}
+                <div className="mt-1">Incomes</div>
+              </div>
+            </Link>
+            <Link href="/budgets">
+              <div className="flex flex-col items-center">
+                {wallet}
+                <div className="mt-1">Budgets</div>
+              </div>  
+            </Link>
+            <Link href="/transactions">
+             <div className="flex flex-col items-center">
+                {queueList}
+                <div className="mt-1">Transactions</div>
+              </div>
+            </Link>
+          </div>
+        </footer>
       </body>
     </html>
   )
