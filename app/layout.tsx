@@ -27,35 +27,32 @@ export default function RootLayout({
           <Breadcrumbs />
           {children}
         </main>
-        <footer className="footer footer-center">
-          <div className="flex justify-center gap-8 py-2 text-xs text-neutral-content">
-            <Link href="/incomes">
-              <div className="flex flex-col items-center">
-                {bars}
-                <div className="mt-1">Overview</div>
-              </div>
-             
-            </Link>
-            <Link href="/incomes">
-              <div className="flex flex-col items-center">
-                {squaresPlus}
-                <div className="mt-1">Incomes</div>
-              </div>
-            </Link>
-            <Link href="/budgets">
-              <div className="flex flex-col items-center">
-                {wallet}
-                <div className="mt-1">Budgets</div>
-              </div>  
-            </Link>
-            <Link href="/transactions">
-             <div className="flex flex-col items-center">
-                {queueList}
-                <div className="mt-1">Transactions</div>
-              </div>
-            </Link>
-          </div>
-        </footer>
+        <div className="btm-nav text-xs bg-neutral text-neutral-content flex lg:hidden">
+          <Link href="/incomes">
+            <div className="flex flex-col items-center">
+              {bars}
+              <div className="mt-1">Overview</div>
+            </div>
+          </Link>
+          <Link href="/incomes">
+            <div className="flex flex-col items-center text-accent-content">
+              {squaresPlus}
+              <div className="mt-1">Incomes</div>
+            </div>
+          </Link>
+          <Link href="/budgets">
+            <div className="flex flex-col items-center">
+              {wallet}
+              <div className="mt-1">Budgets</div>
+            </div>  
+          </Link>
+          <Link href="/transactions">
+            <div className="flex flex-col items-center">
+              {queueList}
+              <div className="mt-1">Transactions</div>
+            </div>
+          </Link>
+        </div>
       </body>
     </html>
   )
