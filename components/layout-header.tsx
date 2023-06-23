@@ -1,4 +1,4 @@
-import { NavigationItem, NavigationItemProps } from "@/lib/types";
+import { NavigationItemProps } from "@/lib/types";
 
 export default function LayoutHeader({ navigationItem }: NavigationItemProps) {
   return (
