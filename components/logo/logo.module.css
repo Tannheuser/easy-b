@@ -1,0 +1,9 @@
+.logoContainer {
+  width: 2rem;
+  height: 2rem;
+}
+
+.logoContainer svg {
+  width: 95%;
+  height: 95%;
+}
