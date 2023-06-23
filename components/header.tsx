@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Logo } from './logo'
 
-export default function Header() {
+export function Header() {
   return (
     <div className="navbar">
       <div className="navbar-start">

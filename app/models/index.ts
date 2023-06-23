@@ -1,2 +1,2 @@
 export * from "./income";
-export * from "./props";
+export * from "../../lib/types/props";

@@ -1,9 +1,7 @@
-import Header from '@/components/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Breadcrumbs from '@/components/breadcrumbs'
-import Link from 'next/link'
-import { bars, queueList, squaresPlus, wallet } from '@/lib/const/icons'
+
+import { BottomNavigation, Breadcrumbs, Header } from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,32 +25,7 @@ export default function RootLayout({
           <Breadcrumbs />
           {children}
         </main>
-        <div className="btm-nav text-xs bg-neutral text-neutral-content flex lg:hidden">
-          <Link href="/incomes">
-            <div className="flex flex-col items-center">
-              {bars}
-              <div className="mt-1">Overview</div>
-            </div>
-          </Link>
-          <Link href="/incomes">
-            <div className="flex flex-col items-center text-accent-content">
-              {squaresPlus}
-              <div className="mt-1">Incomes</div>
-            </div>
-          </Link>
-          <Link href="/budgets">
-            <div className="flex flex-col items-center">
-              {wallet}
-              <div className="mt-1">Budgets</div>
-            </div>  
-          </Link>
-          <Link href="/transactions">
-            <div className="flex flex-col items-center">
-              {queueList}
-              <div className="mt-1">Transactions</div>
-            </div>
-          </Link>
-        </div>
+        <BottomNavigation />
       </body>
     </html>
   )

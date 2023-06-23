@@ -1,4 +1,4 @@
-import IncomeStat from "./income-stat";
+import IncomeCard from "./income-card";
 import { IncomesListProps } from "./models";
 
 function IncomesList(props: IncomesListProps) {
@@ -6,7 +6,7 @@ function IncomesList(props: IncomesListProps) {
 
   return (
     incomes.map((income) => (
-      <IncomeStat key={income.id} income={income} />
+      <IncomeCard key={income.id} income={income} />
     ))
 
   )

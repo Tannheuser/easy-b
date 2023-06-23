@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Breadcrumbs() {
+export function Breadcrumbs() {
   return (
     <div className="text-sm breadcrumbs">
       <ul>
