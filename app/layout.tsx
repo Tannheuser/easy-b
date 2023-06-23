@@ -18,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="flex justify-center fixed w-full z-[1000] bg-base-100">
+        <header className="justify-center fixed w-full z-[1000] bg-base-100 hidden lg:flex">
           <Header />
         </header>
-        <main className="min-h-[calc(100vh-4rem)] flex-col pt-20 px-4 bg-base-100">
+        <main className="min-h-[calc(100vh-4rem)] flex-col lg:pt-20 px-4 bg-base-100">
           <Breadcrumbs />
           {children}
         </main>
@@ -30,4 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-

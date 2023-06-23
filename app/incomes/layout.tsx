@@ -1,14 +1,12 @@
 import React, { ReactNode } from "react";
 
-import { squaresPlus } from "@/lib/const/icons";
+import LayoutHeader from "@/components/layout-header";
+import { appNavigation } from "@/lib/const";
 
 export default async function Layout({children}: {children: ReactNode}) {
   return (
     <div className="my-4">
-      <div className="flex flex-row">
-        <div className="pr-2">{squaresPlus}</div>
-        <h2>Incomes</h2>
-      </div>
+      <LayoutHeader navigationItem={appNavigation[1]} />
       <div className="my-4">
         {children}
       </div>
