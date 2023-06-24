@@ -1,11 +1,12 @@
-import { IncomeStatProps } from "./models";
+import { DetailsComponentProps } from "@/lib/types";
+import { Income } from "../models";
 
-export function IncomeCard({ income }: IncomeStatProps) {
+export function IncomeCard({ item }: DetailsComponentProps<Income>) {
   return (
     <div className="card bg-neutral text-neutral-content flex-[45%]">
       <div className="card-body items-center text-center">
-        <p>{income.title}</p>
-        <h2 className="card-title">&euro;{income.amount}</h2>
+        <p>{item.title}</p>
+        <h2 className="card-title">&euro;{item.amount}</h2>
       </div>
     </div>
   );
