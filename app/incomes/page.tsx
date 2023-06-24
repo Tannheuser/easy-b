@@ -9,7 +9,7 @@ export default async function Page() {
   return (
     <PageLayout navigationItem={appNavigation.incomes}>
       <div className="flex flex-wrap gap-4">
-        <IncomesList incomes={incomes} />
+        <IncomesList items={incomes} />
         <div className="card bg-neutral text-neutral-content flex-[25%]">
           <div className="card-body items-center text-center">
             <p>title</p>

@@ -1,15 +1,14 @@
+import { ListComponentProps } from "@/lib/types";
+import { Income } from "../models";
 import IncomeCard from "./income-card";
-import { IncomesListProps } from "./models";
 
-function IncomesList(props: IncomesListProps) {
-  const { incomes } = props;
+export default function IncomesList(props: ListComponentProps<Income>) {
+  const { items } = props;
 
   return (
-    incomes.map((income) => (
-      <IncomeCard key={income.id} income={income} />
+    items.map((income) => (
+      <IncomeCard key={income.id} item={income} />
     ))
 
   )
 }
-
-export default IncomesList;
