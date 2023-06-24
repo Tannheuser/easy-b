@@ -9,8 +9,16 @@ export class BudgetService {
 
   public async getBudgetByPeriod(period: string): Promise<Budget[]> {
     await dbConnect();
-    const budgets = await BudgetModel.find({ period });
-   
+    const budgets = await BudgetModel.find();
+
     return budgets;
+  }
+
+  public async addBudget(budget: Budget): Promise<Budget> {
+    await dbConnect();
+    const newBudget = new BudgetModel(budget);
+    await newBudget.save();
+
+    return newBudget;
   }
 }

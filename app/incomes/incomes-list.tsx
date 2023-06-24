@@ -2,7 +2,7 @@ import { ListComponentProps } from "@/lib/types";
 import { Income } from "../models";
 import IncomeCard from "./income-card";
 
-function IncomesList(props: ListComponentProps<Income>) {
+export default function IncomesList(props: ListComponentProps<Income>) {
   const { items } = props;
 
   return (
@@ -12,5 +12,3 @@ function IncomesList(props: ListComponentProps<Income>) {
 
   )
 }
-
-export default IncomesList;

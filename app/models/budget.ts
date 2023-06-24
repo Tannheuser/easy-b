@@ -22,7 +22,7 @@ const budgetSchema = new Schema({
 export const BudgetModel = models.Budget || model("Budget", budgetSchema);
 
 export type Budget = {
-  id: string;
+  id?: string;
   amount: number;
   title: string;
   description?: string;
