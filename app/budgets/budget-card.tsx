@@ -18,7 +18,7 @@ export default function BudgetCard({ item }: DetailsComponentProps<Budget>) {
           <div className="my-1 text-xs text-neutral-500">Spent <CurrencyValue value={item.amountSpent} /> out of <CurrencyValue value={item.totalAmount} /></div>
         </div>
       </div>
-      <progress className="progress bg-neutral accent-primary my-2 [&::-webkit-progress-bar]:bg-neutral-300 [&::-webkit-progress-value]:bg-neutral-300 [&::-moz-progress-bar]:bg-neutral-300" value={item.amountSpent} max={item.totalAmount}></progress>
+      <progress className="progress bg-neutral accent-primary my-2 [&::-webkit-progress-value]:bg-neutral-300 [&::-moz-progress-bar]:bg-neutral-300" value={item.amountSpent} max={item.totalAmount}></progress>
     </div>
   )
 }
