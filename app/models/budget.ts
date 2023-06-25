@@ -1,7 +1,11 @@
 import { Schema, model, models } from "mongoose";
 
 const budgetSchema = new Schema({
-  amount: {
+  totalAmount: {
+    type: Number,
+    required: true,
+  },
+  amountSpent: {
     type: Number,
     required: true,
   },
@@ -23,7 +27,8 @@ export const BudgetModel = models.Budget || model("Budget", budgetSchema);
 
 export type Budget = {
   id?: string;
-  amount: number;
+  totalAmount: number;
+  amountSpent: number;
   title: string;
   description?: string;
   icon: string;

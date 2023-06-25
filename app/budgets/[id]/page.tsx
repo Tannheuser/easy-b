@@ -7,10 +7,11 @@ export default async function BudgetDetails({ params }: { params: { id: string }
   if (id && id === "new") {
     const budgetService = new BudgetService();
     const budget: Budget = {
-      amount: 350,
-      title: "Car",
-      description: "Car related expenses",
-      icon: "car",
+      totalAmount: 1450,
+      amountSpent: 0,
+      title: "Household",
+      description: "Household budget",
+      icon: "household",
     };
 
     await budgetService.addBudget(budget);
