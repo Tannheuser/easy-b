@@ -11,7 +11,12 @@ export default function NewBudget() {
     "use server"
     const newBudget: Budget = {
       title: String(data?.get("title")),
-      categories: [],
+      categories: [{
+        title: "Mortgage",
+        spentAmount: 1000,
+        budgetedAmount: 1250,
+        icon: "home",
+      }],
     }
     const budgetService = new BudgetService();
 
@@ -32,3 +37,4 @@ export default function NewBudget() {
     </div>
   );
 }
+

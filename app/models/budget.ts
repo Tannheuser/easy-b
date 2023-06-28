@@ -7,11 +7,12 @@ const budgetSchema = new Schema({
     type: String,
     required: true,
   },
-  // categories: [{
-  //   budgetedAmount: Number,
-  //   spentAmount: Number,
-  //   icon: String,
-  // }]
+  categories: [{
+    title: String,
+    budgetedAmount: Number,
+    spentAmount: Number,
+    icon: String,
+  }]
 });
 
 export const BudgetModel = models.Budget || model("Budget", budgetSchema);
