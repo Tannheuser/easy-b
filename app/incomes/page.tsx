@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components";
+import { RootPageLayout } from "@/components";
 import { appNavigation } from "@/lib/const";
 import { IncomeService } from "@/lib/services";
 import IncomesList from "./incomes-list";
@@ -7,7 +7,7 @@ export default async function Page() {
   const incomes = await new IncomeService().getIncomes();
 
   return (
-    <PageLayout navigationItem={appNavigation.incomes}>
+    <RootPageLayout navigationItem={appNavigation.incomes}>
       <div className="flex flex-wrap gap-4">
         <IncomesList items={incomes} />
         <div className="card bg-neutral text-neutral-content flex-[25%]">
@@ -17,7 +17,7 @@ export default async function Page() {
           </div>
         </div>
       </div>
-    </PageLayout>
+    </RootPageLayout>
   )
 }
 

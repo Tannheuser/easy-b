@@ -1,19 +1,23 @@
-import { PageLayout } from "@/components";
+import BudgetsList from '@/app/budgets/budgets-list';
+import NewBudget from '@/app/budgets/new-budget';
+import { RootPageLayout } from "@/components";
 import { appNavigation } from "@/lib/const";
 import { BudgetService } from "@/lib/services";
-import BudgetsList from '@/app/budgets/budgets-list';
 
 export default async function Page() {
   const budgets = await new BudgetService().getCurrentBudgets();
 
   return (
-    <PageLayout navigationItem={appNavigation.budgets}>
-      <div className="flex flex-wrap gap-4">
+    <RootPageLayout navigationItem={appNavigation.budgets}>
+      <div className="flex flex-col gap-4">
         {
+          <>
           <BudgetsList items={budgets} />
+          <NewBudget />
+          </>
         }
       </div>
-    </PageLayout>
+    </RootPageLayout>
   )
 }
 
