@@ -14,6 +14,7 @@ export default function BudgetCard({ item }: DetailsComponentProps<Budget>) {
 
   const percentValue = Math.floor(budgetedAmount && spentAmount / budgetedAmount * 100);
 
+  // @ts-ignore
   return (
     <div className="card bg-neutral text-neutral-content flex-1 p-4">
       <div className="flex justify-between items-center border-b border-b-neutral-700 pb-2">
