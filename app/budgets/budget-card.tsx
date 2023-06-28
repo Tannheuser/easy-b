@@ -16,33 +16,31 @@ export default function BudgetCard({ item }: DetailsComponentProps<Budget>) {
 
   // @ts-ignore
   return (
-    <div className="card bg-neutral text-neutral-content flex-1 p-4">
+    <div className="card bg-neutral text-content flex-1 p-4">
       <div className="flex justify-between items-center border-b border-b-neutral-700 pb-2">
         <div className="flex flex-col flex-1">
           <div className="text-xl">{item.title}</div>
-          <div className="text-xs text-neutral-500">
+          <div className="text-xs text-neutral-400">
             Spent <CurrencyValue value={spentAmount} /> out of <CurrencyValue value={budgetedAmount} />
           </div>
         </div>
-        <div className="radial-progress bg-base-100 text-neutral-content border-4 border-base-100" style={{"--value": percentValue, "--size": "2rem"}}>
+        <div className="radial-progress bg-base-100 text-neutral-400 border-4 border-base-100" style={{"--value": percentValue, "--size": "2rem"}}>
           <span className="text-[.5rem]">{percentValue}%</span>
         </div>
       </div>
-      <div className="">
-        {
-          item.categories?.map((category) => (
-            <div className="flex border-b border-b-neutral-700 justify-between items-center py-3" key={category.title}>
-              <div className="flex items-center">
-                <div className="rounded-full bg-base-100 w-7 h-7 p-1">
-                  {categories[category.icon]}
-                </div>
-                <div className="ml-2 text-sm">{category.title}</div>
+      {
+        item.categories?.sort((a, b) => b.budgetedAmount - a.budgetedAmount).map((category) => (
+          <div className="flex border-b border-b-neutral-700 justify-between items-center py-3 text-neutral-content" key={category.title}>
+            <div className="flex items-center">
+              <div className="rounded-full bg-base-100 w-8 h-8 p-[.3rem]">
+                {categories[category.icon]}
               </div>
-              <div className="text-xs bg-base-100 p-2 rounded"><CurrencyValue value={category.budgetedAmount} /></div>
+              <div className="ml-2 text-sm">{category.title}</div>
             </div>
-          ))
-        }
-      </div>
+            <div className="text-xs bg-base-100 p-2 rounded"><CurrencyValue value={category.budgetedAmount} /></div>
+          </div>
+        ))
+      }
     </div>
   )
 }
