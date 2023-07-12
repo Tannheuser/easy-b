@@ -1,6 +1,6 @@
+import { Income } from '@/lib/models';
 import { ListComponentProps } from "@/lib/types";
-import { Income } from "../models";
-import IncomeCard from "./income-card";
+import IncomeCard from './income-card';
 
 export default function IncomesList(props: ListComponentProps<Income>) {
   const { items } = props;
