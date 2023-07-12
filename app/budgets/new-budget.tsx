@@ -1,7 +1,7 @@
 import { revalidatePath } from 'next/cache';
 
-import { Budget } from '@/app/models';
 import { appNavigation, plusCircleOutline } from '@/lib/const';
+import { Budget } from '@/lib/models';
 import { BudgetService } from '@/lib/services';
 
 export default function NewBudget() {

@@ -1,5 +1,5 @@
 import { DetailsComponentProps } from '@/lib/types';
-import { Budget } from '@/app/models';
+import { Budget } from '@/lib/models';
 import CurrencyValue from '@/components/utils/currency-value';
 import { categories } from '@/lib/const';
 
