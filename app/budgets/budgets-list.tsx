@@ -1,4 +1,4 @@
-import { Budget } from '@/app/models';
+import { Budget } from '@/lib/models';
 import { ListComponentProps } from '@/lib/types';
 import BudgetCard from './budget-card';
 

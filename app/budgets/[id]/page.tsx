@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-import { Budget } from '@/app/models';
+import { Budget } from '@/lib/models';
 import { LeafPageLayout } from '@/components';
 import { appNavigation } from '@/lib/const';
 import { BudgetService } from '@/lib/services';

@@ -1,5 +1,5 @@
+import { Income } from '@/lib/models';
 import { DetailsComponentProps } from "@/lib/types";
-import { Income } from "../models";
 
 export function IncomeCard({ item }: DetailsComponentProps<Income>) {
   return (

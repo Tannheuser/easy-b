@@ -22,7 +22,6 @@ export const appNavigation: Record<string, NavigationItem> =
     icon: wallet,
   },
   transactions: {
-
     title: "Transactions",
     targetSegment: "transactions",
     href: "/transactions",
