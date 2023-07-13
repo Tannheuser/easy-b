@@ -17,7 +17,15 @@ const transactionSchema = new Schema({
   transactionType: {
     type: String,
     required: true,
-  }
+  },
+  transactionDate: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Number,
+    required: true,
+  },
 });
 
 export const TransactionModel = models.Transaction || model("Transaction", transactionSchema);

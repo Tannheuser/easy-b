@@ -21,7 +21,7 @@ export default function RootLayout({
         <header className="justify-center fixed w-full z-[1000] bg-base-100 hidden lg:flex">
           <Header />
         </header>
-        <main className="min-h-[calc(100vh-4rem)] flex-col lg:pt-20 px-4 bg-base-100">
+        <main className="min-h-[calc(100vh-4rem)] flex-col lg:pt-20 bg-base-100">
           <Breadcrumbs />
           {children}
         </main>
