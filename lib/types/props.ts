@@ -11,6 +11,10 @@ export type ListComponentProps<T> = {
   items: T[];
 };
 
+export type GroupComponentProps<T> = ListComponentProps<T> & {
+  title: string;
+};
+
 export type DetailsComponentProps<T> = {
   item: T;
 };

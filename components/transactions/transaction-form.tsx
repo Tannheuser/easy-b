@@ -1,20 +1,24 @@
 "use client";
 import { useState } from "react";
+import dayjs from 'dayjs';
 
 import { Transaction } from '@/lib/models';
 import { TransactionFormProps } from '@/lib/types';
 
-type TransactionChange = Partial<Transaction> & { category?: string };
+type TransactionChange = Partial<Transaction>;
 
 export function TransactionForm({ categories, saveTransaction }: TransactionFormProps) {
   const [transaction, setTransaction] = useState<TransactionChange>({
     title: '',
     amount: undefined,
     transactionType: 'expense',
+    transactionDate: dayjs().format('YYYY-MM-DD'),
   });
 
+  console.log(categories);
+
   const handleChange = (change: Record<string, unknown>) => {
-    setTransaction({ ...transaction, ...change })
+    setTransaction({ ...transaction, ...change });
   }
 
   const createTransaction = async() => {
@@ -40,11 +44,11 @@ export function TransactionForm({ categories, saveTransaction }: TransactionForm
           <input name="title" type="text" placeholder="Amount" className="input" value={transaction.amount} onChange={(e) => handleChange({ amount: e.target.value })}/>
         </div>
         <div className="form-control w-full">
-          <select className="select w-full" defaultValue="Category">
+          <select className="select w-full" defaultValue="Category" onChange={(e) => handleChange({ category: categories[Number(e.target.value)] })}>
             <option disabled className="text-xl">Category</option>
             {
               categories.map((category, index) => (
-                <option key={index} value={category.id} onChange={(e) => handleChange({ category: categories[index]})}>
+                <option key={index} value={index}>
                   {category.title}
                 </option>
               ))

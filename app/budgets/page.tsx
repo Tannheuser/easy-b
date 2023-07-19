@@ -9,7 +9,7 @@ export default async function Page() {
 
   return (
     <RootPageLayout navigationItem={appNavigation.budgets}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 px-4">
         {
           <>
           <BudgetsList items={budgets} />
