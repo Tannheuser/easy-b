@@ -1,5 +1,6 @@
-import './globals.css'
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { Inter } from 'next/font/google'
+import './globals.css'
 
 import { BottomNavigation, Breadcrumbs, Header } from '@/components'
 
@@ -17,16 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header className="justify-center fixed w-full z-[1000] bg-base-100 hidden lg:flex">
-          <Header />
-        </header>
-        <main className="min-h-[calc(100vh-4rem)] flex-col lg:pt-20 bg-base-100">
-          <Breadcrumbs />
-          {children}
-        </main>
-        <BottomNavigation />
-      </body>
+      <UserProvider>
+        <body className={inter.className}>
+          <header className="justify-center fixed w-full z-[1000] bg-base-100 hidden lg:flex">
+            <Header />
+          </header>
+          <main className="min-h-[calc(100vh-4rem)] flex-col lg:pt-20 bg-base-100">
+            <Breadcrumbs />
+            {children}
+          </main>
+          <BottomNavigation />
+        </body>
+      </UserProvider>
     </html>
   )
 }
